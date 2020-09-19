@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'books.apps.BooksConfig',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'drf_auth.urls'
@@ -134,12 +133,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
